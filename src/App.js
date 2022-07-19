@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { useGetPokemonByNameQuery } from './hooks'
+import { useGetPokemonByNameQuery } from './services/api'
 
 function App() {
-  const { data, isError, isLoading } = useGetPokemonByNameQuery('bulbasaur')
+  const { data, isError, isLoading } = useGetPokemonByNameQuery('bulbasaur');
 
   return (
     <div className="App">

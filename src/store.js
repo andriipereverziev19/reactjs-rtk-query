@@ -1,8 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { pokemonSlice } from './services/pokemonSlice'
+import { api } from './services/api'
 
 export const store = configureStore({
   reducer: {
-    pokemon: pokemonSlice.reducer,
+    [api.reducerPath]: api.reducer,
   },
+  middleware: (gDM) => gDM().concat(api.middleware),
 })
